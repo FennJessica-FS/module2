@@ -3,7 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 
-const bookRoutes = require("./routes/bookRoutes");
+const restaurantRoutes = require("./routes/restaurantRoutes");
+const menuItemRoutes = require("./routes/menuItemRoutes");
 
 const app = express();
 
@@ -18,7 +19,9 @@ app.get("/", (req, res) => {
   res.send("API is running");
 });
 
-app.use("/books", bookRoutes);
+// Routes
+app.use("/restaurants", restaurantRoutes);
+app.use("/menuitems", menuItemRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on http://localhost:${process.env.PORT}`);
