@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-app.use("/restaurants", restaurantRoutes);
-app.use("/menuitems", menuItemRoutes);
+app.use("/api/restaurants", restaurantRoutes);
+app.use("/api/menuitems", menuItemRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on http://localhost:${process.env.PORT}`);
